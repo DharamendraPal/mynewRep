@@ -1,0 +1,12 @@
+Set DescriptionObject = Description.Create()
+DescriptionObject("micClass") = "Dialog"
+DescriptionObject("text") = "Do you want to save changes to .*"
+DescriptionObject("regular expression") = True ' Important for wildcards
+
+Set MyDialog = Window("Notepad").Dialog(DescriptionObject)
+
+Set ButtonDescription = Description.Create()
+ButtonDescription("micClass") = "WinButton"
+ButtonDescription("text") = "Don't Save"
+
+MyDialog.WinButton(ButtonDescription).Click
